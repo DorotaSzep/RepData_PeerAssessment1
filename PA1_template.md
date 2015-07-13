@@ -27,7 +27,7 @@ steps_by_day <- aggregate(steps ~ date, data, sum)
 hist(steps_by_day$steps, main = paste("Total Steps Per Day"), col="blue", xlab="Number of Steps")
 ```
 
-![](PA_template_files/figure-html/unnamed-chunk-2-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
 
 ```r
 step_mean <- mean(steps_by_day$steps)
@@ -46,7 +46,7 @@ steps_by_interval <- aggregate(steps ~ interval, data, mean)
 plot(steps_by_interval$interval,steps_by_interval$steps, type="l", xlab="Interval", ylab="Number of Steps",main="Average Number of Steps per Day by Interval")
 ```
 
-![](PA_template_files/figure-html/unnamed-chunk-3-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
 ```r
 max_interval <- steps_by_interval[which.max(steps_by_interval$steps),1]
@@ -75,7 +75,7 @@ hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="blue", xlab=
 legend("topright", c("Imputed", "Non-imputed"), col=c("red", "blue"), lwd=10)
 ```
 
-![](PA_template_files/figure-html/unnamed-chunk-5-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
 
 Calculate new mean and median for imputed data. 
 
@@ -119,6 +119,6 @@ library(lattice)
 xyplot(steps_by_interval_dow$steps ~ steps_by_interval_dow$interval|steps_by_interval_dow$dow, main="Average Steps per Day by Interval",xlab="Interval", ylab="Steps",layout=c(1,2), type="l")
 ```
 
-![](PA_template_files/figure-html/unnamed-chunk-11-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
 
 In weekdays the big difference between intervals is observed. However the total number of steps is pbserwed for weekends.
